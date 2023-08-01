@@ -49,18 +49,6 @@ bash
     npm start
 
 Visit http://localhost:3000 in your browser to access the application.
-# Usage
-
-    Add a new todo item: Enter the task in the input field and click the "Add" button.
-    Mark a todo item as completed: Click the checkbox next to the task name.
-    Delete a todo item: Click the "Delete" button next to the task name.
-
-
-    controllers: Contains the controller for handling HTTP requests and responses related to the todo items.
-    models: Defines the MongoDB schema for the todo item.
-    public: Contains static files, such as stylesheets.
-    views: Contains the EJS templates for rendering the frontend.
-    app.js: The main application file that sets up the Express.js server and routes.
 
 # Contributing
 
