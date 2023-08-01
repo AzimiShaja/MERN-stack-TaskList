@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-list</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="date">
+            <h1><%= listTitle %> </h1>
+        </div>
+        <div class="list-input">
+            <form action="/" method="post" class="input">
+            <input type="text" name="todo" placeholder="New item">
+            <input type="submit" name="add" value="Add">
+            </form>
+        </div>
+        <% if (locals.newListItems) {%>
+         <% newListItems.forEach((item) => { %>
+            <form  action="/delete" method="post" class="content">
+            
+                <input type="checkbox" value="<%= item._id %>" name="check" onchange="this.form.submit()" >
+                <p><%= item.name%> </p>
+
+        </form>
+        <% }); %>
+        <%} %>
+        
+    </div>
+</body>
+</html>
