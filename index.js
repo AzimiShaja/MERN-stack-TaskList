@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
-const dbUrl = "mongodb+srv://shajaazimi:Zpo8hxH00nDkR9dd@shjaazimi.iktj3rc.mongodb.net/?retryWrites=true&w=majority"
+mongoose.connect("mongodb://localhost:27017/todoListDB", {useNewUrlParser: true});
 
 const app = express();
 const port = 3000;
@@ -12,14 +12,6 @@ const port = 3000;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-
-
-mongoose.connect(dbUrl).then(()=>{
-    console.log("Connected to the DB");
-}).catch((e)=>{
-    console.log(e);
-})
-
 
 const itemsSchema = mongoose.Schema({
     name: {
